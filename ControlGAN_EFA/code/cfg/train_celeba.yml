@@ -1,0 +1,41 @@
+CONFIG_NAME: 'ControlGAN'
+
+DATASET_NAME: 'celeba'
+#DATA_DIR: '/home/xwh/TediGAN/data/celeba'
+DATA_DIR: '../data/celeba'
+GPU_ID: 0
+WORKERS: 1
+
+
+TREE:
+    BRANCH_NUM: 3
+
+TRAIN:
+    FLAG: True
+#    NET_G: '../output/celeba_ControlGAN_2021_06_21_08_38_43/Model/netG_epoch_3.pth'
+#    NET_G: '../output/celeba_ControlGAN_2021_06_25_13_18_51/Model/netG_epoch_37.pth'
+    NET_G: '../output/celeba_ControlGAN_2021_07_30_10_32_24/Model/netG_epoch_247.pth'
+    B_NET_D: True
+    BATCH_SIZE: 8
+    MAX_EPOCH: 250
+    SNAPSHOT_INTERVAL: 1
+    DISCRIMINATOR_LR: 0.0002
+    GENERATOR_LR: 0.0002
+    #
+    NET_E: '../DAMSMencoders/celeba/text_encoder550.pth'
+    SMOOTH:
+        GAMMA1: 4.0 
+        GAMMA2: 5.0
+        GAMMA3: 10.0  
+        LAMBDA: 5.0
+
+
+GAN:
+    DF_DIM: 64
+    GF_DIM: 32
+    Z_DIM: 100
+    R_NUM: 2
+
+TEXT:
+    EMBEDDING_DIM: 256
+    CAPTIONS_PER_IMAGE: 10

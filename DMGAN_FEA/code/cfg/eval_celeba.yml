@@ -1,0 +1,34 @@
+CONFIG_NAME: 'DM-GAN'
+
+DATASET_NAME: 'celeba'
+# DATA_DIR: '/home/xwh/TediGAN/data/celeba'
+# DATA_DIR: '../../../../sample_data/data/celeba'
+DATA_DIR: '../data/celeba'
+GPU_ID: 0
+WORKERS: 1
+
+B_VALIDATION: False # True
+TREE:
+    BRANCH_NUM: 3
+
+
+TRAIN:
+    FLAG: False
+    # NET_G: '../models/celeba_ControlGAN.pth' 
+    # NET_G: '../models/netG_epoch_575.pth'
+    NET_G: '../output/birds_DMGAN_2021_08_22_21_26_47/Model/netG_epoch_250.pth'
+    B_NET_D: False
+    BATCH_SIZE: 8
+    NET_E: '../DAMSMencoders/celeba/text_encoder550.pth'
+
+
+GAN:
+    DF_DIM: 32
+    GF_DIM: 64
+    Z_DIM: 100
+    R_NUM: 2
+
+TEXT:
+    EMBEDDING_DIM: 256
+    CAPTIONS_PER_IMAGE: 10
+    WORDS_NUM: 25

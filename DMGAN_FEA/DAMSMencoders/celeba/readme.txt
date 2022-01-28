@@ -1,0 +1,1 @@
+The DAMSM is same as AttnGAN

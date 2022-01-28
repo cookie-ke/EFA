@@ -1,0 +1,31 @@
+CONFIG_NAME: 'AttnGAN'
+
+DATASET_NAME: 'celeba'
+# DATA_DIR: '/home/xwh/TediGAN/data/celeba'
+DATA_DIR: '../data/celeba'
+GPU_ID: 0
+WORKERS: 1
+
+B_VALIDATION: False # True
+TREE:
+    BRANCH_NUM: 3
+
+
+TRAIN:
+    FLAG: False
+    NET_G: '../output/celeba_attn2_2021_08_15_02_44_25/Model/netG_epoch_250.pth'
+    B_NET_D: False
+    BATCH_SIZE: 25
+    NET_E: '../DAMSMencoders/celeba/text_encoder550.pth'
+
+
+GAN:
+    DF_DIM: 64
+    GF_DIM: 32
+    Z_DIM: 100
+    R_NUM: 2
+
+TEXT:
+    EMBEDDING_DIM: 256
+    CAPTIONS_PER_IMAGE: 10
+    WORDS_NUM: 25
